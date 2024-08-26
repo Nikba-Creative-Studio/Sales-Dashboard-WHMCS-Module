@@ -331,6 +331,13 @@ function sales_dashboard_output($vars) {
 
     $totalPages = ceil($totalRecords / $limit);
 
+    $statuses = Capsule::table('tblinvoices')
+        ->select('status')
+        ->distinct()
+        ->orderBy('status')
+        ->pluck('status');
+
+
     // Output filtering form
     echo '<div class="panel panel-default">';
     echo '<div class="panel-body">';
@@ -353,7 +360,7 @@ function sales_dashboard_output($vars) {
     echo '</div>';
 
     // Custom date range
-    echo '<div class="col-md-6">';
+    echo '<div class="col-md-5">';
     echo '<div class="form-group mr-3" id="custom-dates" style="display:' . ($period == 'custom' ? 'block' : 'none') . ';">';
     echo '<label for="start_date" class="mr-2" style="margin-right: 1rem;">Start Date:</label>';
     echo '<input type="date" name="start_date" id="start_date" class="form-control mr-2" value="' . htmlspecialchars($startDate ?: '') . '">';
@@ -363,7 +370,7 @@ function sales_dashboard_output($vars) {
     echo '</div>';
 
     // Status dropdown
-    echo '<div class="col-md-2">';
+    echo '<div class="col-md-3">';
     echo '<div class="form-group mr-3">';
     echo '<label for="status" class="mr-2" style="margin-right: 1rem;">Status:</label>';
     echo '<select name="status" id="status" class="form-control">';
@@ -447,9 +454,21 @@ function sales_dashboard_output($vars) {
 
     // Script for generating charts using Chart.js
     echo '
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        function toggleCustomDates() {
+            var period = document.getElementById("period").value;
+            var customDates = document.getElementById("custom-dates");
+            if (period === "custom") {
+                customDates.style.display = "block";
+            } else {
+                customDates.style.display = "none";
+            }
+        }
+
+        // Initialize the function on page load
         document.addEventListener("DOMContentLoaded", function() {
+            toggleCustomDates();
+
             var ctx1 = document.getElementById("clientsChart").getContext("2d");
             var clientsChart = new Chart(ctx1, {
                 type: "line",
