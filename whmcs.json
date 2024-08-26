@@ -1,0 +1,29 @@
+{
+    "schema": "1.0",
+    "type": "whmcs-addons",
+    "name": "sales_dashboard",
+    "license": "MIT",
+    "category": "finance",
+    "description": {
+        "name": "Sales Dashboard",
+        "tagline": "Detailed sales management dashboard for WHMCS.",
+        "long": "The Sales Dashboard addon for WHMCS provides a comprehensive view of your sales data. It includes visual representations of sales trends, allows filtering by date and category, and offers in-depth reports to help you manage and analyze your sales performance effectively.",
+        "features": [
+            "Visualize sales trends with interactive charts.",
+            "Filter sales data by date range and category.",
+            "Generate detailed reports on sales performance."
+        ]
+    },
+    "logo": {
+        "filename": "logo.png"
+    },
+    "support": {
+        "homepage": "https://github.com/Nikba-Creative-Studio/Sales-Dashboard-WHMCS-Module"
+    },
+    "authors": [
+        {
+            "name": "Nikba Creative Studio",
+            "homepage": "https://www.nikba.com/"
+        }
+    ]
+}
