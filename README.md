@@ -1,5 +1,7 @@
 # Sales Dashboard WHMCS Module
 
+## You like this module? [Buy me a Coffee](buymeacoffee.com/nikba) ☕︎
+
 ## Overview
 
 The Sales Dashboard module provides a comprehensive and detailed dashboard for managing and analyzing sales within WHMCS. It offers visual insights through widgets and charts, displaying crucial sales-related data, including total clients, invoices, sales, and services. Additionally, the module includes a filtered data view with pagination and links to detailed client and invoice information.
