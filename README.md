@@ -1,6 +1,6 @@
 # Sales Dashboard WHMCS Module
 
-## You like this module? [Buy me a Coffee](buymeacoffee.com/nikba) ☕︎
+## You like this module? [Buy me a Coffee](https://buymeacoffee.com/nikba) ☕︎
 
 ## Overview
 
